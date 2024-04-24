@@ -1,0 +1,15 @@
+
+header{
+    display: none;
+}
+
+@media screen and (max-width: 991px){
+    header{
+        display: block;
+    }
+    
+    
+    .desktop{
+        display: none;
+    }
+}

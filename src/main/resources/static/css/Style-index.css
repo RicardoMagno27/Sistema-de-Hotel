@@ -1,0 +1,15 @@
+.card-style a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.card-style:hover{
+    cursor: pointer;
+    background-color: rgb(20, 58, 163);
+}
+
+.card-style a:hover{
+    color: white;
+    text-decoration: none;
+}
