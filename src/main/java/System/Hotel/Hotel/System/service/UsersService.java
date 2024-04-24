@@ -2,6 +2,8 @@ package System.Hotel.Hotel.System.service;
 
 import java.security.NoSuchAlgorithmException;
 
+import javax.management.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import System.Hotel.Hotel.System.execption.CriptoExistsException;
@@ -18,13 +20,17 @@ public class UsersService {
     private UsersRepository usersRepository;
 
     public void SalveUser(Users users) throws Exception {
+
         try {
-            if (usersRepository.findByEmail(users.getEmail()) == null) {
-                throw new EmailExistsException("Este Email ja Existe" + users.getEmail());
+
+            if (usersRepository.findByUsername(users.getUsername()) != null) {
+                throw new EmailExistsException("Este usuario já esta cadastrado: " + users.getUsername());
             }
+
             users.setPassword(Util.md5(users.getPassword()));
+
         } catch (NoSuchAlgorithmException e) {
-            throw new CriptoExistsException("Error na Senha");
+            throw new CriptoExistsException("Error na criptografia da senha");
         }
         usersRepository.save(users);
     }

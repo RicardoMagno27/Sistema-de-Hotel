@@ -23,6 +23,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UsersController {
 
     @Autowired
+    UsersRepository usersRepository;
+
+    @Autowired
     private UsersService usersService;
 
     @GetMapping("/")

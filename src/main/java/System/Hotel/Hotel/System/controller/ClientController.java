@@ -12,12 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import System.Hotel.Hotel.System.model.Client;
 import System.Hotel.Hotel.System.repository.ClientRepository;
+
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ClientController {
+
     @Autowired
     private ClientRepository clientRepository;
 
